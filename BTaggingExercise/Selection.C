@@ -133,7 +133,7 @@ void Selection(int index){
 
 	std::map<std::string, TDirectory*> dir;		
 	
-	std::string inputDirPath="/afs/cern.ch/work/s/spmondal/public/BTV_CMSDAS2020/samples/";
+	std::string inputDirPath="root://cmseos.fnal.gov//store/user/cmsdas/2021/short_exercises/BTag/";
 	std::string outDirPath="Output/";
 	std::string fileName;
 	std::string Channel;
@@ -178,7 +178,7 @@ void Selection(int index){
 		
 		fileName = inputDirPath + "out_"+Channel+".root";
 			
-		fIn[Channel] = new TFile(fileName.c_str(),"Read");		
+		fIn[Channel] =TFile::Open(fileName.c_str(),"Read");		
 		gROOT->cd();
 		nGen_[Channel] = ((TH1F*)fIn[Channel]->Get("h_total"))->GetBinContent(2);
 		tr[Channel] = (TTree*)fIn[Channel]->Get("Events");
