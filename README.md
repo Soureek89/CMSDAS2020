@@ -31,10 +31,7 @@ $source process_all.sh &>master.log &
 ```
 It takes around 20-25 mins for the jobs to complete. For information regarding the overall progress refer to the `master.log`, while individual job logs are stored in `logs/` directory.
   
-The input sample files can be found in the following location 
-```
-$ eos ls root://cmseos.fnal.gov//store/user/cmsdas/2021/short_exercises/BTag/
-```
+The input sample files can be found in the following location via XRootd `root://cmseos.fnal.gov//store/user/cmsdas/2021/short_exercises/BTag/`
 
 `make_plot.C` script can be used to check Data-MC comparison plots with two different b-tagging calibration methods, namely 1a) fixed WP-based (index =1) and 2b) discriminant reshaping (index=2) from https://twiki.cern.ch/twiki/bin/viewauth/CMS/BTagSFMethods . Also the plots w/o  applying the SFs can be obtained by switching to index=0.     
 
