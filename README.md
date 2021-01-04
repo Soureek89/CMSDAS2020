@@ -14,6 +14,7 @@ $git clone https://github.com/soureek/CMSDAS2020 CMSDAS2020/
 $scram b -j9
 
 $cd CMSDAS2020/BTaggingExercise/
+$voms-proxy-init --voms cms
 ```
 ## Running
 The b-tagging calibration SF is calculated via the `BTagWeight` class defined in `BTagWeight.cc` using the efficiency histograms from `EffHistos/`
